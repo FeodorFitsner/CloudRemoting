@@ -1,3 +1,5 @@
+image: Visual Studio 2015 - GCE
+
 install:
   - cinst pester
   - ps: Invoke-WebRequest -Uri 'http://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi' -UseBasicParsing -OutFile 'AWSToolsAndSDKForNet.msi'
