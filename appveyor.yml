@@ -3,11 +3,8 @@ image: Visual Studio 2015 - GCE
 install:
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-http-proxy.ps1'))
   - cinst pester
-  #- ps: Invoke-WebRequest -Uri 'http://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi' -UseBasicParsing -OutFile 'AWSToolsAndSDKForNet.msi'
-  - ps: 'Write-Host "PSModulePath: $env:PSModulePath"'
-  - appveyor DownloadFile http://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi
+  - ps: Invoke-WebRequest -Uri 'http://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi' -UseBasicParsing -OutFile 'AWSToolsAndSDKForNet.msi'
   - msiexec.exe /i AWSToolsAndSDKForNet.msi /quiet /qn /norestart /log install.log
-  - ps: 'Write-Host "PSModulePath: $env:PSModulePath"'
 
 build: false
 
